@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./nav.css">
+    <style> 
+    .wrapper{
+            width: 100%;
+            height: 170px;
+            background-color: #d07e7e;
+            margin: 0 auto;
+        }
+        .header{
+            height: 40px;
+            background-color: #fff;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+        h1{
+            float: left;
+        }
+        .search{
+            width: 400px;
+            height: 40px;
+            border: 1px solid blue;;
+            background-color: #fff;
+            float: left;
+            margin-left: 500px;
+        }
+        .search input{width: 335px;
+            height: 38px;
+            border: 0;
+            padding-left: 20px;
+            float: left;
+
+        }
+        .search input::placeholder{
+            font-size: 14px;
+            color: #bfbfbf;
+        }
+        .search button{
+            width: 45px;
+            height: 40px;
+            float: left;
+            border: 0;
+        }
+        .user{
+           float: right;
+            height: 40px;
+            margin-right: 10px;
+            color: #666;
+            font-weight: bolder;
+        }
+        .user img{
+            vertical-align: middle;
+        }
+       *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+      
+        }
+       .box{
+        width: 300px;
+        height: 600px;
+        position:absolute;
+        margin-left: 20px;
+        float: left;
+
+       }
+       .box-image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left:20px;
+        margin-top: 20px;
+        z-index: 0;
+        opacity: 0;
+       }
+       .box-image:nth-child(1){opacity: 1;;}
+       .box-left{
+        width: 35px;
+        height: 70px;
+        color: #ccc;
+        position: absolute;
+        margin-top: 250px;
+        margin-left: 20px;
+        border-radius: 0 5px 5px 0;
+        line-height: 70px;
+    }
+    .box-left:hover{
+        background-color:#00000050;
+        color:white;
+    }
+    .box-right{
+        width: 35px;
+        height: 70px;
+        color: #ccc;
+        position: absolute;
+        margin-top: 250px;
+        border-radius: 0 5px 5px 0;
+        line-height: 70px;
+        right: -20px;
+    }
+    .box-right:hover{
+        background-color:#00000050;
+        color:white;
+    }
+    .spot ul{
+       position: absolute;
+       width: 250px;
+       height: 18px;
+       display: block;
+       justify-content: space-evenly;
+       align-items: center;
+       border-left-color: #ffffff60;
+       bottom: 5px;
+       left: 50%;
+       transform: translateX(-50%);
+       border-radius: 10px;
+       margin-left: -10px;
+    }
+    .spot li{
+        width: 14px;
+        height: 14px;
+        border-radius: 100%;
+        background-color: #ccc;
+        margin-right: 10px;
+        float: left;
+    }
+    .spot{
+        position: absolute;
+        bottom: 10px;
+        left: 300px;
+    }
+    .spot:hover{
+        background-color: #fff;;
+    }
+
+    .btli{
+        float: left;
+        width: 200px;
+        line-height: 40px;
+        text-align: center;
+
+    }
+    .nav{
+        height: 40px;
+        background:linear-gradient(rgb(232, 159, 172),rgb(253, 215, 241));
+        top: -100px;
+        position:fixed;
+        text-align: center;
+        width: 100%;
+        z-index: 2;
+       }
+    .navlist a{
+        color:#5e5a5a;
+        display: block;
+    }
+    .navlist a:hover{
+       color: #eb8cd1;
+    }
+   .droplist{
+    background-color: #e39191;
+    box-shadow: 0 2px 3px #662b2b;
+    display: none;
+    position: relative;
+    z-index: 1;
+   }
+   .btli:hover .droplist{
+    display: block;
+   }
+   .shipin{
+    width: 1000px;
+    height: 500px;
+    float: right;
+    right: 0;
+    display: block;
+    z-index: 0;
+    position:absolute;
+   }
+   .shipin-video{
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+   }
+   h5.after{
+    width: 50px;
+    height: 15px;
+    background-color: rgba(128, 128, 128, 0.5);
+    position:absolute;
+    margin-top: -20px;
+    z-index: 1;
+    border-radius: 5px;
+    margin-left: 250px;
+    text-align: center;
+    color:#fff;
+   }
+   h5.middle{
+    width: 50px;
+    height: 15px;
+    background-color: rgba(128, 128, 128, 0.5);
+    position:absolute;
+    margin-top: -20px;
+    z-index: 1;
+    border-radius: 5px;
+    margin-left: 90px;
+    text-align: center;
+    color:#fff;
+   }
+   h5.before{
+    width: 50px;
+    height: 15px;
+    background-color: rgba(128, 128, 128, 0.5);
+    position:absolute;
+    margin-top: -20px;
+    z-index: 1;
+    border-radius: 5px;
+    text-align: center;
+    color:#fff;
+   }
+       </style>
+       <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div class="header wrapper">
+        <h1>
+            <a href="#"><img src="./B站.jpg" alt="" width="150px"></a>
+        </h1>
+    <div class="search">
+        <input type="text" placeholder="输入关键词">
+        <button><img src="./搜索.jpg" alt="" width="45px" height="40px"></button>
+    </div>
+    <div class="user"><img src="./炒蛋.jpg" alt="" width="60px">
+    <span>地球炒蛋</span>
+</div>
+</div>
+
+<div class="nav">
+    <ul class="navlist">
+        <!-- 下拉菜单 -->
+        <li class="btli"><a href="#">首页</a>
+        <ul class="droplist">
+            <li><a href="#">首页1</a></li>
+            <li><a href="#">首页2</a></li>
+            <li><a href="#">首页3</a></li>
+
+        </ul>
+        </li>
+        <li class="btli"><a href="#">直播</a>
+            <ul class="droplist">
+                <li><a href="#">唱歌</a></li>
+                <li><a href="#">明星</a></li>
+                <li><a href="#">吃播</a></li>
+    
+            </ul>
+            </li>
+            <li class="btli"><a href="#">游戏</a>
+                <ul class="droplist">
+                    <li><a href="#">王者</a></li>
+                    <li><a href="#">世界</a></li>
+                    <li><a href="#">分手厨房</a></li>
+        
+                </ul>
+                </li>
+                <li class="btli"><a href="#">番剧</a>
+                    <ul class="droplist">
+                        <li><a href="#">完结动画</a></li>
+                        <li><a href="#">连载动画</a></li>
+                        <li><a href="#">其他动画</a></li>
+            
+                    </ul>
+                    </li>
+                    <li class="btli"><a href="#">漫画</a>
+                        <ul class="droplist">
+                            <li><a href="#">碧蓝之海</a></li>
+                            <li><a href="#">间谍过家家</a></li>
+                            <li><a href="#">航海王</a></li>
+                
+                        </ul>
+                        </li>
+                        <li class="btli"><a href="#">亚运会</a>
+                            <ul class="droplist">
+                                <li><a href="#">跳水</a></li>
+                                <li><a href="#">篮球</a></li>
+                                <li><a href="#">田径</a></li>
+                    
+                            </ul>
+                            </li>
+</div>
+<div class="box">
+    <div class="slider">
+        <ul class="box-image">
+            <li><img src="./gong1.jpg" alt="" width="300px"></li>
+            <li><img src="./gong2.jpg" alt="" width="300px"></li>
+            <li><img src="./gong3.jpg" alt="" width="300px"></li>
+            <li><img src="./gong4.jpg" alt="" width="300px"></li>
+            <li><img src="./gong5.jpg" alt="" width="300px"></li>
+            <li><img src="./gong6.jpg" alt="" width="300px"></li>
+        </ul>
+    </div>
+    <div class="box-left">&lt;</div>
+    <div class="box-right">&gt;</div>
+</div>
+<div class="spot">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+</div>
+                      
+<div class="shipin">
+    <div class="shipin-video"><video src="./bb1.mp4" width="300px" ></video>
+        <h5 class="before">▷3000</h5>
+            <h5 class="middle">☷349</h5>
+            <h5 class="after">0:10</h5></div>
+            <div class="shipin-video"><video src="./bb2.mp4" width="300px"></video>
+                <h5 class="before">▷1029</h5>
+                <h5 class="middle">☷949</h5>
+                <h5 class="after">2:29</h5></div>
+        <div class="shipin-video"><video src="./bb3.mp4" width="300px"></video>
+            <h5 class="before">▷5888</h5>
+            <h5 class="middle">☷399</h5>
+            <h5 class="after">0:16</h5></div>
+        <div class="shipin-video"><video src="./bb4.mp4" width="300px"></video>
+            <h5 class="before">▷5888</h5>
+            <h5 class="middle">☷399</h5>
+            <h5 class="after">0:16</h5>
+        </div>
+        <div class="shipin-video"><video src="./bb5.mp4" width="300px"></video>
+            <h5 class="before">▷5888</h5>
+            <h5 class="middle">☷399</h5>
+            <h5 class="after">0:16</h5>
+        </div>
+        <div class="shipin-video"><video src="./bb7.mp4" width="300px"></video>
+            <h5 class="before">▷5888</h5>
+            <h5 class="middle">☷399</h5>
+            <h5 class="after">0:16</h5>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    const sp=document.querySelector('.shipin')
+    const head=document.querySelector('.nav')
+    window.addEventListener('scroll',function(){
+        // 当页面滚动到视频模块时，就改变头部
+        const n=document.documentElement.scrollTop
+        if(n>=sp.offsetTop){head.style.top=0}
+        else{head.style.top='-80px'}
+        // 也可以这样简写
+        // head.style.top=n>=sp.offsetTop?0:'-80'
+    })
+</script>
+ 
+<!-- 制作轮播图 -->
+<script type="text/javascript">
+    // 声明轮播效果函数
+ function openTimer() {
+ let t = setInterval(function() {
+index++;
+index=index % 6;
+$('.box-image').css('opacity', 0); // 让其他照片隐藏
+$('.box-image').eq(index).css('opacity', 1); // 找到下一张照片
+}, 2000);
+
+return t;
+}
+
+    let index=0
+    let timer=openTimer()
+    // 小圆点的功能
+    $('.spot li').mouseover(function(){
+        index=$(this).index()
+        $('.box-image').css('opacity',0)//让其他照片隐藏
+    $('.box-image').eq(index).css('opacity',1)
+
+    })
+//   左右键的功能
+    $('.box-left').click(function(){
+        if(index<=0){index==5}
+        else{index--}
+        $('.box-image').css('opacity',0)//让其他照片隐藏
+    $('.box-image').eq(index).css('opacity',1)
+
+
+        
+    })
+    $('.box-right').click(function(){
+        if(index==5){
+            index=0
+        }
+        else{index++;}
+        $('.box-image').css('opacity',0)//让其他照片隐藏
+    $('.box-image').eq(index).css('opacity',1)
+    })
+    // 鼠标经过轮播停止
+    $('.box-image').mouseover(function(){
+     clearInterval(timer)
+    //  鼠标离开轮播继续
+    }).mouseout(function(){
+        timer=openTimer();
+    })
+
+
+ </script>
+</body>
+</html>
+
+
+ 
