@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这里是小刘的朋友圈</title>
+    <link rel="shortcut icon" href="./xiaobao.ico" type="image/x-icon">
+    <style>
+        .wrapper{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .header{
+            height: 40px;
+            background-color: #fff;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+        h1{
+            float: left;
+        }
+        .nav{
+            height: 50px;
+            float: left;
+            margin-left: 70px;
+            margin-bottom: 20px;
+        }
+        .nav li{
+            float: left;
+            margin-right: 30px;
+            margin-bottom: 40px;
+            float: left;
+        }
+        li.guanyuwo{
+            border-bottom: 2px solid #83aed1;
+            color: blueviolet;
+        }
+        .nav li a{
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            display:block;
+            color: #000;
+            text-decoration: none;
+            float: left;
+        }
+
+        .nav li a:hover{
+            border-bottom: 2px solid #83aed1;
+            color: blueviolet;
+        }
+        .search{
+            width: 400px;
+            height: 40px;
+            border: 1px solid blue;;
+            background-color: #fff;
+            float: left;
+            margin-left: 59px;
+        }
+        .search input{width: 335px;
+            height: 38px;
+            border: 0;
+            padding-left: 20px;
+            float: left;
+
+        }
+        .search input::placeholder{
+            font-size: 14px;
+            color: #bfbfbf;
+        }
+        .search button{
+            width: 45px;
+            height: 40px;
+            float: left;
+            border: 0;
+        }
+        .user{
+           float: right;
+            height: 40px;
+            margin-right: 30px;
+            color: #666;
+            font-weight: bolder;
+        }
+        .user img{
+            vertical-align: middle;
+        }
+        .banner{
+            height: 500px;
+            background-color: hsl(320, 100%, 90%);
+        }
+        .banner .wrapper{
+            height: 500px;
+            background-image: url(./最终版海绵宝宝.jpg);
+        }
+        .banner .left{
+            margin-right: 0px;
+            float:left;
+            padding: 0 30px;
+            line-height: 50px;
+            width: 250px;
+            height: 500px;
+            background-color: rgba(0,0,0,0.3);
+            font-size: 20px;
+            color: white;
+            font-weight: bolder;
+        }
+        .banner .right{
+            margin-top: 80px;
+            margin-right: 100px;
+            float:right;
+            width: 200px;
+            height: 300px;
+            background-color:white;
+            border-radius: 20px;
+        }
+        .banner .right h2{height: 50px;
+            background-color: #9bceea;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+        .banner .right .content{
+            line-height: 30px;
+            font-size: 18px;
+            color: #777676;
+
+        }
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .zhaopian .hd{
+        height: 120px;
+        background-color: #fff;
+        line-height: 100px;
+        margin-left: 50px;
+
+      }
+      .zhaopian .bd{
+        margin-left: 40px;
+      }
+      .zhaopian .bd li{
+        width: 300px;
+        height: 300px;
+        background-color: #311c1c;
+        float: left;
+        margin-left: 20px;
+        color: #666;
+      }
+     
+      .tongnian{
+        height: 600px;
+        margin-left: 30px;
+        clear: left;
+      }
+      .nanhai .bd{
+        margin-left: 40px;
+      }
+      .nanhai .hd{
+        height: 120px;
+        background-color: #fcfafa;
+        line-height: 200px;
+        margin-left: 50px;
+        clear: left;
+      }
+
+      .nanhai .bd li{
+        width: 300px;
+        height: 300px;
+        background-color: #311c1c;
+        float: left;
+        margin-left: 20px;
+        color: #666;
+      }
+     
+      .tongnian{
+        height: 600px;
+        margin-left: 50px;
+        clear: left;
+      }
+
+      .tongnian .hd{
+        height: 120px;
+        background-color: #fcfafa;
+        line-height: 200px;
+        margin-left: 30px;
+        clear: left;
+      }
+      .tongnian .bd li{
+        float: left;
+        margin-left: 30px;
+      }
+
+     
+       .middle{
+        width: 200px;
+        float: left;
+       }
+       .small{
+        width: 30px;
+        float: left;
+       }
+       .small li{
+        list-style-type: none;
+        height: 30px;
+        margin-bottom: 27px;
+       }
+       .small li img{
+        width: 30px;
+        margin-bottom: 27px;
+        left: 0;
+       }
+       .small li:hover{
+        border: 2px solid #63d9d5;
+       }
+       .middle2{
+        width: 200px;
+        float: left;
+        margin-left: 100px;
+       }
+       .small2{
+        width: 30px;
+        float: left;
+       }
+       .small2 li{
+        list-style-type: none;
+        height: 30px;
+        margin-bottom: 27px;
+       }
+       .small2 li img{
+        width: 30px;
+        margin-bottom: 27px;
+        left: 0;
+       }
+       .small2 li:hover{
+        border: 2px solid #63d9d5;
+       }
+       .middle3{
+        width: 200px;
+        float: left;
+        margin-left: 100px;
+       }
+       .small3{
+        width: 30px;
+        float: left;
+       }
+       .small3 li{
+        list-style-type: none;
+        height: 30px;
+        margin-bottom: 27px;
+       }
+       .small3 li img{
+        width: 30px;
+        margin-bottom: 27px;
+        left: 0;
+       }
+       .small3 li:hover{
+        border: 2px solid #63d9d5;
+       }
+
+       .middle4{
+        width: 200px;
+        float: left;
+        margin-left: 100px;
+       }
+       .small4{
+        width: 30px;
+        float:left;
+       }
+       .small4 li{
+        list-style-type: none;
+        height: 30px;
+        margin-bottom: 27px;
+       }
+       .small4 li img{
+        width: 30px;
+        margin-bottom: 27px;
+        left: 0;
+       }
+       .small4 li:hover{
+        border: 2px solid #63d9d5;
+       }
+.comment input{
+            width: 600px;
+            height: 60px;
+            border: 0;
+            margin-top: 20px;
+            background-color:rgba(0,0,0,0.3);
+            margin-left: 50px;
+            
+      }
+      .comment button{
+        background-color: #95b6f0;
+        color: #fff;
+        border:none;
+        border-radius: 4px;
+        margin-left: 5px;
+        width: 100px;
+        height: 60px;
+      }
+       .comment.tatal{
+        margin-right: 80px;
+        color: #999;
+        margin-top: 10px;
+        opacity: 0;
+        
+       }
+    </style>
+</head>
+<body>
+    <div class="header wrapper">
+        <h1>
+            <a href="#"><img src="./logo.jpg" alt="" width="150px"></a>
+        </h1>
+        <div class="nav">
+            <ul>
+                <li class="guanyuwo"><a href='./开始制作之关于我.html'>关于我</a></li>
+                <li class="preferece"><a href="./开始制作之preference.html">preferece</a></li>
+                <li class="zhizuorizhi"><a href="./开始制作之制作日志.html"> 制作日志</a></li>
+            </ul>
+
+        </div>
+        <div class="search">
+            <input type="text" placeholder="输入关键词">
+            <button><img src="./搜索.jpg" alt="" width="45px" height="40px"></button>
+        </div>
+        <div class="user"><img src="./炒蛋.jpg" alt="" width="60px">
+        <span>地球炒蛋</span></div>
+    </div>
+    <div class="banner">
+        <div class="wrapper">
+            <div class="left">
+                <ul>
+                    <li>·平凡至极又可爱非常</li>
+                    <li>·心有猛虎┗|｀O′|┛ 嗷~~</li>
+                    <li>·浪漫反叛学家</li>
+                    <li>·坚硬只是我的外壳</li>
+                    <li>·芋泥芋圆爱好者</li>
+                    <li>·废话不多的小宝藏</li>
+                    <li>·持续分期不稳定减肥中</li>
+                    <li>·具体性格的看人(*^_^*)</li>
+                </ul>
+            </div>
+            <div class="right">
+                <h2>励志小语</h2>
+                <div class="content">
+                        在你拍月亮或者日落时
+                    你会发现相机里永远没有你眼前的美但你不会认为是天空不好看
+                    因为你知道相机并不能真正捕捉天空的美
+                    你应该以同样的方式去看自己事实上，你跟晚霞一样耀眼</div>
+            </div>
+        </div>
+    </div>
+    <div class="zhaopian">
+        <div class="hd">
+            <h2>photos(●'◡'●)</h2>
+        </div>
+        <div class="bd">
+            <ul>
+                <li><img src="./1.jpg" alt="" width="300px" title="像星星一样">
+                <h3>德阳中学的毕业证</h3></li>
+                <li><img src="./2.jpg" alt="" width="300px" title="银河有迹可循">
+                <h3>第一次唱念做打的我</h3></li>
+                <li><img src="./3.jpg" alt="" width="300px" title="小满即安">
+                <h3>嗯...这很难评</h3></li>
+                <li><img src="./4.jpg" alt="" width="300px" title="万物美好我在中央">
+                <h3>学校艺术节拍的短发的我</h3></li>
+            </ul>
+        
+        </div>
+
+    </div>
+
+    <div class="nanhai">
+        <div class="hd">
+            <h2>like(*^▽^*)</h2>
+        </div>
+        <div class="bd">
+            <ul>
+                <li><img src="./shaui1.jpg" alt="" width="300px" title="像星星一样">
+                </li>
+                <li><img src="./shaui2.jpg" alt="" width="300px" title="银河有迹可循">
+                </li>
+                <li><img src="./shaui3.jpg" alt="" width="300px" title="小满即安">
+                </li>
+                <li><img src="./shuai4.jpg" alt="" width="300px" title="万物美好我在中央">
+               </li>
+            </ul>
+        
+        </div>
+
+    </div>
+   <div class="tongnian">
+    <div class="hd">
+        <h2>童年里的best😊</h2>
+    </div>
+    <div class="bd">
+        <div class="middle"><img src="./tianxianbaobao.jpg" alt="" width="200px"></div>
+        <div class="small">
+            <ul>
+                <li class="active"><img src="./tianxianbaobao.jpg" alt=""></li>
+                <li><img src="./maohelaoshi.jpg" alt=""></li>
+                <li><img src="./miqimiaomiaowu.jpg" alt=""></li>
+                <li><img src="./xiongchumo.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="middle2"><img src="./tang1.jpg" alt="" width="200px"></div>
+        <div class="small2">
+            <ul>
+                <li class="act"><img src="./tang1.jpg" alt=""></li>
+                <li><img src="./tang2.jpg" alt=""></li>
+                <li><img src="./tang3.jpg" alt=""></li>
+                <li><img src="./tang4.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="middle3"><img src="./shu1.jpg" alt="" width="200px"></div>
+        <div class="small3">
+            <ul>
+                <li class="ac"><img src="./shu1.jpg" alt=""></li>
+                <li><img src="./数2.jpg" alt=""></li>
+                <li><img src="./shu3.jpg" alt=""></li>
+                <li><img src="./shu4.jpg" alt=""></li>
+            </ul>
+        </div>
+
+        <div class="middle4"><img src="./wan1.jpg" alt="" width="200px"></div>
+        <div class="small4">
+            <ul>
+                <li class="actively"><img src="./wan1.jpg" alt=""></li>
+                <li><img src="./wan2.jpg" alt=""></li>
+                <li><img src="./wan3.jpg" alt=""></li>
+                <li><img src="./wan4.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="comment">
+    <input type="text" placeholder="浅浅友善评论一条吧" >
+    <button>发布</button>
+    <span class="total">0/200字</span>
+</div>
+
+   <script>
+    addEventListener
+        alert('当你打开我主页的那一刻，你就已经输的很彻底了，我的观点像刀刃一样已经深深扎进了你的心里，你试图反驳我可是你无能为力，所以你焦急的点开我的主页想要私信我，可是你输了，我的私信功能已经关闭，所以你无法反驳')
+        const small=document.querySelector('.small')
+        const middle=document.querySelector('.middle')
+        
+        small.addEventListener('mouseover',function(e){
+            if(e.target.tagName==='IMG'){console.log(111);
+            // 干掉以前的
+            this.querySelector('.active').classList.remove('active')
+            // 当前元素的爸爸添加active
+            e.target.parentNode.classList.add('active')
+            // 获取当前小图片的src,让中等盒子里面的图片更换为小图片src
+            middle.querySelector('img').src=e.target.src
+
+        }})
+
+        const small2=document.querySelector('.small2')
+        const middle2=document.querySelector('.middle2')
+        
+        small2.addEventListener('mouseover',function(e){
+            if(e.target.tagName==='IMG'){console.log(111);
+            // 干掉以前的
+            this.querySelector('.act').classList.remove('act')
+            // 当前元素的爸爸添加active
+            e.target.parentNode.classList.add('act')
+            // 获取当前小图片的src,让中等盒子里面的图片更换为小图片src
+            middle2.querySelector('img').src=e.target.src
+
+        }})
+
+        const small3=document.querySelector('.small3')
+        const middle3=document.querySelector('.middle3')
+        
+        small3.addEventListener('mouseover',function(e){
+            if(e.target.tagName==='IMG'){console.log(111);
+            // 干掉以前的
+            this.querySelector('.ac').classList.remove('ac')
+            // 当前元素的爸爸添加active
+            e.target.parentNode.classList.add('ac')
+            // 获取当前小图片的src,让中等盒子里面的图片更换为小图片src
+            middle3.querySelector('img').src=e.target.src
+
+        }})
+
+        const small4=document.querySelector('.small4')
+        const middle4=document.querySelector('.middle4')
+        
+        small4.addEventListener('mouseover',function(e){
+            if(e.target.tagName==='IMG'){console.log(111);
+            // 干掉以前的
+            this.querySelector('.actively').classList.remove('actively')
+            // 当前元素的爸爸添加active
+            e.target.parentNode.classList.add('actively')
+            // 获取当前小图片的src,让中等盒子里面的图片更换为小图片src
+            middle4.querySelector('img').src=e.target.src
+
+        }})
+        
+    </script>
+   
+</body>
+</html>
